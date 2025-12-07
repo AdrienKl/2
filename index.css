@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400&family=Manrope:wght@400;500;700&family=Playfair+Display:wght@600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        --background: 43 31% 94%;
+        --foreground: 234 18% 30%;
+        --card: 0 0% 100%;
+        --card-foreground: 234 18% 30%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 234 18% 30%;
+        --primary: 11 65% 63%;
+        --primary-foreground: 43 31% 94%;
+        --secondary: 130 20% 22%;
+        --secondary-foreground: 43 31% 94%;
+        --muted: 40 54% 76%;
+        --muted-foreground: 82 9% 39%;
+        --accent: 40 54% 76%;
+        --accent-foreground: 130 20% 22%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 29 43% 64%;
+        --input: 0 0% 88%;
+        --ring: 11 65% 63%;
+        --chart-1: 11 65% 63%;
+        --chart-2: 130 20% 22%;
+        --chart-3: 40 54% 76%;
+        --chart-4: 234 18% 30%;
+        --chart-5: 29 43% 64%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-accent {
+    font-family: 'Caveat', cursive;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Star rating styles */
+.star-rating {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.star {
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.star:hover {
+    transform: scale(1.15);
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F1DE;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4A373;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E07A5F;
+}
